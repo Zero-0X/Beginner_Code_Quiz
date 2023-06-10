@@ -1,62 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    
-    <button>Start</button>
 
-    <!-- I want there to be an arcade style top players list with their scores -->
-    <!-- bottom position will be for new players -->
-    <!-- Will ask for initials, and instruct player to press Enter once initials are entered -->
-    <!-- once enter is pressed list will be replaced by Start button -->
-    <!-- once Start is clicked player will see a 3 second countdown, followed by 'Begin!' -->
-    <!-- countdown will apear above questions throughout Quiz -->
-    <!-- 10 questions, 60 seconds to complete, 6-second penalty for each incorrect question, quiz will terminate after all questions are answered -->
-    <!-- each question will be multiple choice, one correct answer, answers will change color on hover, incorrect responses will turn red with an X next to it, correct will turn green with a circle next to it -->
-    <!-- final score will be displayed at end of Quiz, player will ascend based on final score -->
-    <!-- player data will be removed after each playthrough -->
-
-    <!DOCTYPE html>
-<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
   <title>Beginner Code Quiz</title>
 </head>
+
 <body>
-<div id="leaderboard">
-  <h2>Top Players</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Initials</th>
-        <th>Score</th>
-      </tr>
-    </thead>
-    <tbody id="playerList">
-      <!-- Player entries will be dynamically added here -->
-    </tbody>
-  </table>
-  <form id="playerForm">
-    <input type="text" id="initialsInput" maxlength="3" placeholder="Enter your initials" required />
-    <button type="submit">Enter</button>
-  </form>
-</div>
 
-<div id="quiz">
-  <h2>Quiz Questions</h2>
-  <p id="question"></p>
-  <ul id="choices">  </ul>
-</div>
 
-<div id="countdown"></div>
+  <!-- I want there to be an arcade style top players list with their scores -->
+  <!-- bottom position will be for new players -->
+  <!-- Will ask for initials, and instruct player to press Enter once initials are entered -->
+  <!-- once enter is pressed list will be replaced by Start button -->
+  <!-- once Start is clicked player will see a 3 second countdown, followed by 'Begin!' -->
+  <!-- countdown will apear above questions throughout Quiz -->
+  <!-- 10 questions, 60 seconds to complete, 6-second penalty for each incorrect question, quiz will terminate after all questions are answered -->
+  <!-- each question will be multiple choice, one correct answer, answers will change color on hover, incorrect responses will turn red with an X next to it, correct will turn green with a circle next to it -->
+  <!-- final score will be displayed at end of Quiz, player will ascend based on final score -->
+  <!-- player data will be removed after each playthrough -->
 
-    <script src="js/script.js"></script>
-    <script src="js/questions.js"></script>
+  <button id="start">Start</button>
+  <div id="quiz container">
+    <div id="quiz">
+      <h2>Beginner Code Quiz</h2>
+      <p id="question"></p>
+      <ul id="choices"></ul>
+      <button id="submitBtn">Submit</button>
+      <div id="score"></div>
+    </div>
+  </div>
+  <script src="js/questions.js"></script>
+  <script src="js/script.js"></script>
+
 </body>
+
 </html>

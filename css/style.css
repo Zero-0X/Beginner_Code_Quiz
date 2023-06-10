@@ -2,77 +2,23 @@ html, body {
     height: 100%;
 }
 
-#leaderboard {
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-    font-family: 'Press Start 2P', cursive;
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  thead th {
-    background-color: #fff;
-    color: #000;
-    text-align: left;
-    padding: 10px;
-  }
-  
-  tbody td {
-    padding: 10px;
-  }
-  
-  #playerForm {
-    margin-top: 20px;
-  }
-  
-  #playerInput {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: center;
-    justify-content: center;
-  }
-  
-  #initialsInput {
-    padding: 5px;
-    font-family: 'Press Start 2P', cursive;
-    text-transform: uppercase;
-  }
-  
-  
-  #countdown {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  /* Example CSS styles for the quiz */
-  #quiz {
-    background-color: #f4f4f4;
-    padding: 20px;
-  }
-  
-  #question {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  #choices li {
-    list-style-type: none;
-    margin-bottom: 5px;
-  }
-  
-  #playerForm {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #score {
-    font-weight: bold;
-    margin-top: 20px;
-  }
+#start, #quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#choices li {
+  text-decoration: none;
+}

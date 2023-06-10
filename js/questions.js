@@ -2,13 +2,13 @@ var questionData = [
     {
         question: "1. Which of the following is a markup language used for structuring the content on web pages?",
         choices: ['a. CSS', 'b. JavaScript', 'c. HTML', 'd. PHP'],
-        correctAnswer: c.HTML
+        correctAnswer: "c.HTML"
     },
 
     {
         question: "2. Which CSS property is used to change the text color of an element?",
         choices: ['a. color', 'b. background-color', 'c. font - color', 'd. text - color'],
-        Answer: a.color
+        Answer: "a.color"
     },
 
     {
@@ -42,16 +42,16 @@ var questionData = [
     },
 
     {
-        question: "8. What does the acronym "SEO" stand for in web development?",
-        choices: ['a. Search Engine Optimization', 'b. Secure External Object', 'c. Single-Page Application', 'd. Style Encapsulation Object']
+        question: "8. What does the acronym 'SEO' stand for in web development?",
+        choices: ['a. Search Engine Optimization', 'b. Secure External Object', 'c. Single-Page Application', 'd. Style Encapsulation Object'],
         Answer: "a. Search Engine Optimization"
-    }
+    },
 
     {
         question: "9. Which of the following is NOT a valid CSS display property value?",
         choices: ['a. block', 'b. inline', 'c. visible', 'd. flex'],
         Answer: "c. visible"
-    }
+    },
     
     {
         question: "10. Which CSS unit of measurement is relative to the font size of the element?",

@@ -1,40 +1,62 @@
-// JavaScript code to handle the game functionality
-document.getElementById("startButton").addEventListener("click", startGame);
+var currentQuestion = 0;
+var score = 0;
+var timeRemaining = 60;
+var timerElement = document.querySelector('#timer'); 
 
-let playerList = []; // Array to store player objects { initials: "", score: 0 }
+var startElement = document.querySelector("start");
+var questionElement = document.getElementById("question");
+var choicesElement = document.getElementById("choices");
+var submitBtn = document.getElementById("submitBtn");
+var scoreElement = document.getElementById("score");
 
-function startGame() {
-  const initials = document.getElementById("initials").value;
-  if (initials !== "") {
-    // Create a new player object and add it to the playerList array
-    const player = { initials: initials, score: 0 };
-    playerList.push(player);
+function startQuiz() {
 
-    // Remove player input section
-    document.getElementById("playerInput").style.display = "none";
+  quizContainer.style.display = "none";
+}
 
-    // Display countdown
-    let countdown = 3;
-    const countdownDisplay = document.getElementById("countdown");
-    countdownDisplay.innerText = countdown;
+function displayQuestion() {
+  var question = questionData[currentQuestion];
+  questionElement.textContent = question.question;
 
-    const countdownInterval = setInterval(() => {
-      countdown--;
-      countdownDisplay.innerText = countdown;
-      if (countdown === 0) {
-        clearInterval(countdownInterval);
-        countdownDisplay.innerText = "Begin!";
-        // Start displaying quiz questions and handle the quiz logic
-        displayQuestions();
-      }
-    }, 1000);
+  choicesElement.innerHTML = "";
+  for (var i = 0; i < question.choices.length; i++) {
+    var choice = question.choices[i];
+    var li = document.createElement("li");
+    var radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "answer";
+    radio.value = i;
+    li.appendChild(radio);
+    li.appendChild(document.createTextNode(choice));
+    choicesElement.appendChild(li);
   }
 }
 
-function displayQuestions() {
-  // Implement the logic to display quiz questions and handle user answers
+function checkAnswer() {
+  var selectedOption = document.querySelector('input[name="answer"]:checked');
+  if (selectedOption) {
+    var answer = parseInt(selectedOption.value);
+    if (answer === questionData[currentQuestion].correctAnswer) {
+      score++;
+    }
+    currentQuestion++;
+
+    if (currentQuestion < questionData.length) {
+      displayQuestion();
+    } else {
+      showScore();
+    }
+  }
 }
 
-function updateLeaderboard() {
-  // Implement the logic to update the leaderboard with player scores
+function showScore() {
+  quiz.style.display = "none";
+  scoreElement.textContent = "Your Score: " + score + "/" + questionData.length;
+  scoreElement.style.display = "block";
 }
+
+start.addEventListener("click", startQuiz);
+
+submitBtn.addEventListener("click", checkAnswer);
+
+displayQuestion();
