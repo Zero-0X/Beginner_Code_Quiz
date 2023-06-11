@@ -6,7 +6,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #540d6e;
 }
 
 table {
@@ -14,11 +14,13 @@ table {
 }
 
 .quiz-container {
-    width: 1000px;
+    width: 600px;
     max-width: 60%;
-    background-color: white;
+    height: 400px;
+    background-color: #ffd23f;
     border-radius: 15px;
-    padding: 6px;
+    padding: 20px;
+    box-shadow: 0 6px #540d6e;
 }
 
 .answers {
@@ -26,18 +28,36 @@ table {
     flex-direction: column;
     justify-content: center;
     width: 200px;
-    gap: 6px;
+    gap: 12px;
+    
 }
 
 .btn:hover {
     color: yellow;
-    background-color: blue;
+    background-color: #ee4266;
 }
 
 .btn {
     display: flex;
+    flex-wrap: wrap;
     border-radius: 15px;
     border: 0;
+    padding: 10px;
+    box-shadow: 0 6px #540d6e;
+}
+
+.btn:active {
+    background-color: #c03553;
+    box-shadow: #540d6e;
+    transform: translateY(4px);
+}
+
+.btn.correct {
+
+}
+
+.btn.incorrect {
+    
 }
 
 #start-quiz {
