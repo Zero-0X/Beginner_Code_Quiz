@@ -18,7 +18,7 @@ var penaltyTime = 6000;
 var currentQuestionIndex = 0;
 
 // function that displays the start button and hides the quiz container until the player clicks start
-function startButton () {
+function startQuiz () {
 
 }
 // function that displays the questions from the questions.js file, in order, starting with question 1, ending with question 10
@@ -35,6 +35,6 @@ function gameOver () {
 }
 // function that displays Leaderboard with blinking form for the player to enter their initials after they have completed the quiz
 function topPlayers () {
-  
+
 }
 
