@@ -1,62 +1,40 @@
-var currentQuestion = 0;
-var score = 0;
-var timeRemaining = 60;
-var timerElement = document.querySelector('#timer'); 
 
-var startElement = document.querySelector("start");
-var questionElement = document.getElementById("question");
-var choicesElement = document.getElementById("choices");
-var submitBtn = document.getElementById("submitBtn");
-var scoreElement = document.getElementById("score");
+var leaderboard = document.querySelector ('#top-scores');
+var playerScores = document.querySelector ('#player-scores');
+var startButton = document.querySelector ('#start-quiz');
+var quizTimer = document.querySelector ('#quiz-timer');
+var questions = document.querySelector('#questions-container');
+var choices = document.querySelector ('#choices');
 
-function startQuiz() {
+// variable for the total quiz time of 60 seconds
+// setInterval of 1000 miliseconds
+// clearInterval when timer hits 0
+// 6000 milisecond penalty for each incorrect answer
+// variable for when the timer hits 0
 
-  quizContainer.style.display = "none";
+var totalQuizTime = 60;
+var timerInterval;
+var penaltyTime = 6000;
+var currentQuestionIndex = 0;
+
+// function that displays the start button and hides the quiz container until the player clicks start
+function startButton () {
+
+}
+// function that displays the questions from the questions.js file, in order, starting with question 1, ending with question 10
+function displayQuestions () {
+
+}
+// function that displays correct answers when incorrect answers are chosen
+function correctAnswers () {
+
+}
+// function that prints 'Game Over' once final question answer is submitted
+function gameOver () {
+
+}
+// function that displays Leaderboard with blinking form for the player to enter their initials after they have completed the quiz
+function topPlayers () {
+  
 }
 
-function displayQuestion() {
-  var question = questionData[currentQuestion];
-  questionElement.textContent = question.question;
-
-  choicesElement.innerHTML = "";
-  for (var i = 0; i < question.choices.length; i++) {
-    var choice = question.choices[i];
-    var li = document.createElement("li");
-    var radio = document.createElement("input");
-    radio.type = "radio";
-    radio.name = "answer";
-    radio.value = i;
-    li.appendChild(radio);
-    li.appendChild(document.createTextNode(choice));
-    choicesElement.appendChild(li);
-  }
-}
-
-function checkAnswer() {
-  var selectedOption = document.querySelector('input[name="answer"]:checked');
-  if (selectedOption) {
-    var answer = parseInt(selectedOption.value);
-    if (answer === questionData[currentQuestion].correctAnswer) {
-      score++;
-    }
-    currentQuestion++;
-
-    if (currentQuestion < questionData.length) {
-      displayQuestion();
-    } else {
-      showScore();
-    }
-  }
-}
-
-function showScore() {
-  quiz.style.display = "none";
-  scoreElement.textContent = "Your Score: " + score + "/" + questionData.length;
-  scoreElement.style.display = "block";
-}
-
-start.addEventListener("click", startQuiz);
-
-submitBtn.addEventListener("click", checkAnswer);
-
-displayQuestion();

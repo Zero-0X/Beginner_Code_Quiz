@@ -10,31 +10,26 @@
 
 <body>
 
-
-  <!-- I want there to be an arcade style top players list with their scores -->
-  <!-- bottom position will be for new players -->
-  <!-- Will ask for initials, and instruct player to press Enter once initials are entered -->
-  <!-- once enter is pressed list will be replaced by Start button -->
+  <table>
+  <!-- Once the quiz is completed I want there to be an arcade style 'top players' list with their scores -->
+  <!-- bottom position will be for new players with their score displayed-->
+  <!-- Will ask for initials in a blinking form, and instruct player to press Enter once initials are typed -->
+    <thead id="top-scores">Leaderboard</thead>
+    <tbody id="player-scores"></tbody>
+  </table>
   <!-- once Start is clicked player will see a 3 second countdown, followed by 'Begin!' -->
+  <button id="start-quiz">Start</button>
   <!-- countdown will apear above questions throughout Quiz -->
+  <div id="quiz-timer"></div>
   <!-- 10 questions, 60 seconds to complete, 6-second penalty for each incorrect question, quiz will terminate after all questions are answered -->
   <!-- each question will be multiple choice, one correct answer, answers will change color on hover, incorrect responses will turn red with an X next to it, correct will turn green with a circle next to it -->
+  <div id="question-container"></div>
+  <div id="choices"></div>
   <!-- final score will be displayed at end of Quiz, player will ascend based on final score -->
-  <!-- player data will be removed after each playthrough -->
+  <!-- player data will be removed after each playthrough --> 
 
-  <button id="start">Start</button>
-  <div id="quiz container">
-    <div id="quiz">
-      <h2>Beginner Code Quiz</h2>
-      <p id="question"></p>
-      <ul id="choices"></ul>
-      <button id="submitBtn">Submit</button>
-      <div id="score"></div>
-    </div>
-  </div>
   <script src="js/questions.js"></script>
   <script src="js/script.js"></script>
-
 </body>
 
 </html>
