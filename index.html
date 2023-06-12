@@ -5,40 +5,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <title>Beginner Code Quiz</title>
 </head>
 
 <body>
   <div class="container">
-    <div id="quiz-container" class="hide">
+    <h1 id="catch-phrase" class="catch-phrase">Start Your Engines!</h1>
+      <div id="quiz-container" class="hide">
       <!-- Once the quiz is completed I want there to be an arcade style 'top players' list with their scores -->
       <!-- bottom position will be for new players with their score displayed-->
       <!-- Will ask for initials in a blinking form, and instruct player to press Enter once initials are typed -->
-      <table class="table-display">
-        <thead id="top-scores" class="hide">Leaderboard</thead>
-        <tbody id="player-scores" class="hide"></tbody>
-      </table>
 
       <!-- once Start is clicked player will see a 3 second countdown, followed by 'Begin!' -->
 
       <!-- countdown will apear above questions throughout Quiz -->
-      <div id="quiz-timer"></div>
+        <div id="quiz-timer"></div>
       <!-- 10 questions, 60 seconds to complete, 6-second penalty for each incorrect question, quiz will terminate after all questions are answered -->
       <!-- each question will be multiple choice, one correct answer, answers will change color on hover, incorrect responses will turn red with an X next to it, correct will turn green with a circle next to it -->
-      <div id="question">Question</div>
-      <div id="choices" class="answers">
+        <div id="question">Question</div>
+        <div id="choices" class="answers">
         <button class="btn">1</button>
         <button class="btn">2</button>
         <button class="btn">3</button>
         <button class="btn">4</button>
+        </div>
       </div>
-    </div>
     <div class="start-next">
-      <button id="start-quiz" class="start-quiz btn">Start</button>
-      <button id="next-question" class="next-question btn hide">Next</button>
+      <button id="start-quiz" class="start-quiz btn">Blast Off!</button>
+      <button id="next-question" class="next-question btn hide">Almost there!</button>
+      <button a href="/highscores.html" id="leaderboard" class="leaderboard">Leaderboard</button>
     </div>
+    
   </div>
-<h3 class="bottom-right">image by rawpixel.com</h3>
+  <h3 class="bottom-right">image by rawpixel.com</h3>
 
   <!-- final score will be displayed at end of Quiz, player will ascend based on final score -->
   <!-- player data will be removed after each playthrough -->
@@ -46,4 +48,5 @@
   <script defer src="js/questions.js"></script>
   <script defer src="js/script.js"></script>
 </body>
+
 </html>

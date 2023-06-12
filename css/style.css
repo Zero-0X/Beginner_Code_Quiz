@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     padding: 0;
@@ -7,6 +8,7 @@ html, body {
     justify-content: center;
     align-items: center;
     background-color: #540d6e;
+    font-family: 'VT323', monospace;
 }
 
 body {
@@ -21,10 +23,6 @@ body {
     bottom: 10px;
     right: 20px;
     color: #ffd23f;
-}
-
-table {
-    
 }
 
 #quiz-container {
@@ -43,7 +41,7 @@ table {
     justify-content: center;
     width: 200px;
     gap: 12px;
-    
+
 }
 
 .btn:hover {
@@ -75,7 +73,17 @@ table {
     color: #ffd23f;
 }
 
-.start-quiz, .next-question {
+.catch-phrase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    color: #ffd23f;
+    padding: 10px 50px;
+}
+
+.start-quiz, .next-question, .leaderboard {
+    font-family: 'VT323', monospace;
     padding: 10px 50px;
     font-size: 50px;
     background-color: #ffd23f;
@@ -85,7 +93,7 @@ table {
     border: 0;
 }
 
-.start-quiz:hover, .next-question:hover {
+.start-quiz:hover, .next-question:hover, .leaderboard:hover {
     border-radius: 15px;
     border: 0;
     padding: 10px 50px;
@@ -95,19 +103,19 @@ table {
     color: #ffd23f;
 }
 
-.start-quiz:hover {
+.start-quiz:hover, .leaderboard:hover { 
     box-shadow: 4px 4px #ffd23f;
 }
 
-.start-quiz:active, .next-question:active {
+.start-quiz:active, .next-question:active, .leaderboard:active {
     background-color: #c03553;
     transform: translateY(4px);
 }
 
 .start-next {
-   display: flex;
+    display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .hide {
