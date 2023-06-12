@@ -1,12 +1,12 @@
 const startButton = document.getElementById ('start-quiz');
 const catchPhrase = document.getElementById ('catch-phrase');
+const leaderboard = document.getElementById ('leaderboard');
 const questions = document.getElementById ('quiz-container');
 const choices = document.getElementById ('choices');
 const nextQuestion = document.getElementById ('next-question');
 
 var quizTimer = document.querySelector ('quiz-timer');
-var leaderboard = document.querySelector ('top-scores');
-var playerScores = document.querySelector ('player-scores');
+
 
 let currentQuestionIndex = 0;
 let score = 0
@@ -27,14 +27,23 @@ startButton.addEventListener('click', startQuiz);
 // function that displays the start button and hides the quiz container until the player clicks start
 function startQuiz () {
     console.log('GO!')
-    startButton.classList.add('hide')   
     catchPhrase.classList.add('hide')
+    startButton.classList.add('hide')
+    leaderboard.classList.add('hide')
     questions.classList.remove('hide')
     displayQuestion()
 }
 // function that displays the questions from the questions.js file, in order, starting with question 1, ending with question 10
 function displayQuestion() {
-    questionData
+    const currentQuestion = questionData[currentQuestionIndex];
+  const questionElement = document.getElementById('question');
+  const choicesElements = document.querySelectorAll('#choices button');
+
+  questionElement.textContent = currentQuestion.question;
+
+  currentQuestion.choices.forEach((choice, index) => {
+    choicesElements[index].textContent = choice;
+  });
 }
 // function that displays correct answers when incorrect answers are chosen
 function correctAnswers () {

@@ -32,6 +32,7 @@ body {
     background-color: #ffd23f;
     border-radius: 15px;
     padding: 20px;
+    margin: 80px auto 0;
     box-shadow: 6px 6px #ee4266;
 }
 
@@ -80,6 +81,7 @@ body {
     font-size: 80px;
     color: #ffd23f;
     padding: 10px 50px;
+    margin-bottom: 40px;
 }
 
 .start-quiz, .next-question, .leaderboard {
@@ -112,10 +114,20 @@ body {
     transform: translateY(4px);
 }
 
+.leaderboard, .leaderboard:hover, .leaderboard:active {
+    padding: 10px 30px;
+    width: fit-content;
+}
+
 .start-next {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 15px;
+}
+
+.catch-phrase, .start-quiz, .next-question, .leaderboard {
+    margin-top: 0;
 }
 
 .hide {
