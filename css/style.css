@@ -9,18 +9,32 @@ html, body {
     background-color: #540d6e;
 }
 
+body {
+    background-image: url(https://github.com/Zero-0X/Challenge_4_Beginner_Code_Quiz/blob/main/91657.jpg?raw=true);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #ffd23f;
+}
+
 table {
     
 }
 
-.quiz-container {
-    width: 600px;
+#quiz-container {
+    width: 800px;
     max-width: 60%;
-    height: 400px;
+    height: 300px;
     background-color: #ffd23f;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 6px #540d6e;
+    box-shadow: 6px 6px #ee4266;
 }
 
 .answers {
@@ -43,35 +57,59 @@ table {
     border-radius: 15px;
     border: 0;
     padding: 10px;
-    box-shadow: 0 6px #540d6e;
+    box-shadow: 4px 4px #540d6e;
 }
 
 .btn:active {
     background-color: #c03553;
-    box-shadow: #540d6e;
     transform: translateY(4px);
 }
 
 .btn.correct {
-
+    background-color: #66ff00;
+    color: #540d6e;
 }
 
 .btn.incorrect {
-    
+    background-color: #ff0000;
+    color: #ffd23f;
 }
 
-#start-quiz {
-    
+.start-quiz, .next-question {
+    padding: 10px 50px;
+    font-size: 50px;
+    background-color: #ffd23f;
+    color: #540d6e;
+    box-shadow: 4px 4px #540d6e;
+    border-radius: 15px;
+    border: 0;
 }
 
-#quiz-timer {
-
+.start-quiz:hover, .next-question:hover {
+    border-radius: 15px;
+    border: 0;
+    padding: 10px 50px;
+    font-size: 50px;
+    box-shadow: 4px 4px #540d6e;
+    background-color: #ee4266;
+    color: #ffd23f;
 }
 
-#question-container {
-
+.start-quiz:hover {
+    box-shadow: 4px 4px #ffd23f;
 }
 
-#choices {
-  
+.start-quiz:active, .next-question:active {
+    background-color: #c03553;
+    transform: translateY(4px);
+}
+
+.start-next {
+   display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.hide {
+    display: none;
 }

@@ -1,10 +1,10 @@
+const startButton = document.getElementById ('start-quiz');
+const questions = document.getElementById('quiz-container');
 
-var leaderboard = document.querySelector ('#top-scores');
-var playerScores = document.querySelector ('#player-scores');
-var startButton = document.querySelector ('#start-quiz');
-var quizTimer = document.querySelector ('#quiz-timer');
-var questions = document.querySelector('#questions-container');
-var choices = document.querySelector ('#choices');
+var choices = document.querySelector ('choices');
+var quizTimer = document.querySelector ('quiz-timer');
+var leaderboard = document.querySelector ('top-scores');
+var playerScores = document.querySelector ('player-scores');
 
 // variable for the total quiz time of 60 seconds
 // setInterval of 1000 miliseconds
@@ -17,9 +17,13 @@ var timerInterval;
 var penaltyTime = 6000;
 var currentQuestionIndex = 0;
 
+startButton.addEventListener('click', startQuiz);
+
 // function that displays the start button and hides the quiz container until the player clicks start
 function startQuiz () {
-
+    console.log('GO!')
+    startButton.classList.add('hide')
+    questions.classList.remove('hide')
 }
 // function that displays the questions from the questions.js file, in order, starting with question 1, ending with question 10
 function displayQuestions () {
