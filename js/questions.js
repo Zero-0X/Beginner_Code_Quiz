@@ -1,4 +1,4 @@
-const questionData = [
+let questionData = [
     {
         question: "1. Which of the following is a markup language used for structuring the content on web pages?",
         choices: ['CSS', 'JavaScript', 'HTML', 'PHP'],

@@ -6,7 +6,10 @@ const quizContainer = document.getElementById('quiz-container');
 const questions = document.getElementById('question');
 const choices = document.getElementById('choices');
 
-var quizTimer = document.querySelector('quiz-timer');
+const countdownElement = document.getElementById('countdown');
+var quizTimer= document.getElementById('quiz-timer');
+var timer;
+var penalty = 6;
 
 let currentQuestionIndex = 0;
 let score = 0
@@ -20,49 +23,40 @@ function startQuiz() {
   startButton.classList.add('hide')
   leaderboard.classList.add('hide')
   quizContainer.classList.remove('hide')
-  setNextQuestion()
+  quizTimer.style.display = ('hide');
 }
 // function that sets the questions from the questions.js file, in order, starting with question 1, ending with question 10
-function setNextQuestion() {
-  displayQuestion([currentQuestionIndex])
+
+function startTimer() {
+  var time = 60;
+
+  timer = setInterval(function (startTimer) {
+    time--;
+    countdownElement.textContent = '60';
+
+    if (time <= 0) {
+      clearInterval(timer);
+      // Time's up! Handle the event here.
+      console.log("Game Over!");
+    }
+  }, 1000);
 }
 
-function displayQuestion() {
-  const currentQuestion = questionData[currentQuestionIndex];
-  const questionElement = document.getElementById('question');
-  const choicesElements = document.querySelectorAll('#choices button');
-  const continueButton = document.getElementById('next-question');
+function checkAnswer() {
+  var isCorrect = false; // Replace with your answer checking logic
 
-  questionElement.textContent = currentQuestion.question;
-
-  currentQuestion.choices.forEach((choice, index) => {
-    choicesElements[index].textContent = choice;
-  });
-
-  continueButton.classList.add('hide');
-
-  choicesElements.forEach((choiceButton) => {
-    choiceButton.addEventListener('click', () => {
-      // Check if the selected answer is correct
-      const selectedAnswer = currentQuestion.choices;
-      const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
-
-      // Apply styling based on the correctness of the answer
-      if (isCorrect) {
-        choicesElements[index].classList.add('correct');
-        score++; // Increment the score if the answer is correct
-      } else {
-        choicesElements.classList.add('incorrect');
-        totalQuizTime -= penaltyTime; // Apply penalty time for incorrect answer
-      }
-
-      // Disable all choice buttons after an answer is selected
-      choicesElements.forEach((button) => {
-        button.disabled = true;
-      });
-
-      // Show the continue button
-      continueButton.classList.remove('hide');
-    });
-  });
+  if (isCorrect) {
+    clearInterval(timer);
+    countdownElement.style.display = 'none';
+    // Correct answer. Handle the event here.
+    console.log("Correct answer!");
+  } else {
+    clearInterval(timer);
+    countdownElement.innerHTML = parseInt(timerElement.innerHTML) - penalty;
+    setTimeout(startTimer, 1000);
+    // Incorrect answer. Handle the event here.
+    console.log("Incorrect answer!");
+  }
 }
+
+startTimer();
