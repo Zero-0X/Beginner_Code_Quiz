@@ -24,6 +24,7 @@ function startQuiz() {
   leaderboard.classList.add('hide')
   quizContainer.classList.remove('hide')
   quizTimer.style.display = ('hide');
+  startTimer()
 }
 // function that sets the questions from the questions.js file, in order, starting with question 1, ending with question 10
 
@@ -32,7 +33,7 @@ function startTimer() {
 
   timer = setInterval(function (startTimer) {
     time--;
-    countdownElement.textContent = '60';
+    countdownElement.textContent = time;
 
     if (time <= 0) {
       clearInterval(timer);
@@ -49,14 +50,12 @@ function checkAnswer() {
     clearInterval(timer);
     countdownElement.style.display = 'none';
     // Correct answer. Handle the event here.
-    console.log("Correct answer!");
+    console.log("Great Job!");
   } else {
     clearInterval(timer);
     countdownElement.innerHTML = parseInt(timerElement.innerHTML) - penalty;
     setTimeout(startTimer, 1000);
     // Incorrect answer. Handle the event here.
-    console.log("Incorrect answer!");
+    console.log("Almost!");
   }
 }
-
-startTimer();
