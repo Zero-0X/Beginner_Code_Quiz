@@ -2,13 +2,13 @@ const questionData = [
     {
         question: "1. Which of the following is a markup language used for structuring the content on web pages?",
         choices: ['CSS', 'JavaScript', 'HTML', 'PHP'],
-        correctAnswer: "c.HTML"
+        correctAnswer: "HTML"
     },
 
     {
         question: "2. Which CSS property is used to change the text color of an element?",
         choices: ['color', 'background-color', 'font - color', 'text - color'],
-        Answer: "olor"
+        Answer: "color"
     },
 
     {

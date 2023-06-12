@@ -36,13 +36,25 @@ body {
     box-shadow: 6px 6px #ee4266;
 }
 
-.answers {
+#question {
+    font-size: 30px;
+    color: #540d6e; 
+    text-decoration: underline #ee4266;
+  }
+  
+  #choices button {
+    font-size: 23px;
+    font-family: 'VT323', monospace;
+  }
+
+.answers button {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 200px;
+    margin-top: 10px;
     gap: 12px;
-
+    color: #540d6e;
 }
 
 .btn:hover {
