@@ -43,19 +43,21 @@ function startTimer() {
   }, 1000);
 }
 
-function checkAnswer() {
-  var isCorrect = false; // Replace with your answer checking logic
+function questionSequence(data) {
+  for (let i = 0; i < data.length; i++) {
+    const question = data[i].question;
+    const answerChoices = data[i].choices;
 
-  if (isCorrect) {
-    clearInterval(timer);
-    countdownElement.style.display = 'none';
-    // Correct answer. Handle the event here.
-    console.log("Great Job!");
-  } else {
-    clearInterval(timer);
-    countdownElement.innerHTML = parseInt(timerElement.innerHTML) - penalty;
-    setTimeout(startTimer, 1000);
-    // Incorrect answer. Handle the event here.
-    console.log("Almost!");
+    questions.textContent = `Question ${i + 1}: ${question}`;
+
+    choices.innerHTML = '';
+
+    for (let j = 0; j < answerChoices.length; j++) {
+      const choice = document.createElement('button');
+      choice.textContent = answerChoices[j];
+      choices.appendChild(choice);
+    }
   }
 }
+
+questionSequence(questionData);
