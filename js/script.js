@@ -11,7 +11,7 @@ const countdownElement = document.getElementById('countdown');
 var quizTimer = document.getElementById('quiz-timer');
 var timer;
 var penalty = 6;
-
+var time = 60;
 let currentQuestionIndex = 0;
 let score = 0
 
@@ -31,7 +31,7 @@ function startQuiz() {
 // function that sets the questions from the questions.js file, in order, starting with question 1, ending with question 10
 
 function startTimer() {
-  var time = 60;
+  time = 60;
 
   timer = setInterval(function () {
     time--;
@@ -40,6 +40,7 @@ function startTimer() {
     if (time <= 0) {
       clearInterval(timer);
       console.log("Game Over!");
+      gameOver();
     }
   }, 1000);
 }
@@ -96,7 +97,8 @@ function checkAnswer(selectedChoice, correctAnswer) {
 
 // function to penalize for incorrect answers
 function penalize() {
-  countdownElement.textContent = parseInt(countdownElement.textContent) - penalty;
+  time = time - penalty;
+  countdownElement.textContent = time;
 }
 
 // function to disable the answer choices
