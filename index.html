@@ -14,19 +14,14 @@
 <body>
   <div class="container">
     <div id="quiz-timer" class="hide">
-      <h1>Time Remaining</h1>
+      <h1 id="timer-title">Time Remaining</h1>
       <h1 id="countdown">60</h1>
     </div>
     <h1 id="catch-phrase" class="catch-phrase">Start Your Engines!</h1>
+    <p id="game-over" class="hide">Game Over!</p>
     <div id="quiz-container" class="hide">
-      <!-- Once the quiz is completed I want there to be an arcade style 'top players' list with their scores -->
-      <!-- bottom position will be for new players with their score displayed-->
-      <!-- Will ask for initials in a blinking form, and instruct player to press Enter once initials are typed -->
-
       <!-- once Start is clicked player will see a 3 second countdown, followed by 'Begin!' -->
-
       <!-- countdown will apear above questions throughout Quiz -->
-
       <!-- 10 questions, 60 seconds to complete, 6-second penalty for each incorrect question, quiz will terminate after all questions are answered -->
       <!-- each question will be multiple choice, one correct answer, answers will change color on hover, incorrect responses will turn red with an X next to it, correct will turn green with a circle next to it -->
       <div id="question">Question</div>
@@ -44,10 +39,11 @@
     <div class="start-next">
       <button a href="/highscores.html" id="leaderboard" class="leaderboard">Leaderboard</button>
     </div>
-
   </div>
   <h3 class="bottom-right">image by rawpixel.com</h3>
-
+  <!-- Once the quiz is completed I want there to be an arcade style 'top players' list with their scores -->
+  <!-- bottom position will be for new players with their score displayed-->
+  <!-- Will ask for initials in a blinking form, and instruct player to press Enter once initials are typed -->
   <!-- final score will be displayed at end of Quiz, player will ascend based on final score -->
   <!-- player data will be removed after each playthrough -->
 
