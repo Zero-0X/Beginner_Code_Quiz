@@ -125,6 +125,8 @@ continueButton.addEventListener('click', function () {
   }
 });
 
+leaderboard.addEventListener('click', displayLeaderboard);
+
 // function to end the quiz and display the leaderboard
 function endQuiz() {
   clearInterval(timer);
@@ -143,13 +145,21 @@ function endQuiz() {
   gameOverParagraph.style.marginBottom = 'auto';
   gameOverParagraph.style.textAlign = 'center';
 
-  // leaderboard.style.marginTop = '100px';
-
   // TODO: Implement logic to display the leaderboard with scores
+  const playerInitials = prompt('Enter your initials:');
+  leaderboardData.push({ initials: playerInitials, score });
 
   console.log('Quiz ended');
 }
 
 // TODO: Implement logic to display the leaderboard with scores
+
+let.leaderboardData = [];
+
+function displayLeaderboard() {
+  console.log('How did you do?')
+
+
+}
 
 questionSequence(questionData);
