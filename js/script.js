@@ -167,8 +167,43 @@ function endQuiz() {
 
 function displayLeaderboard() {
   console.log('How did you do?')
+  
+  // Sort leaderboard data by score in descending order
+  leaderboardData.sort((a, b) => b.score - a.score); 
 
+  // Clear the leaderboard container
+  leaderboard.innerHTML = ''; 
 
+  const leaderboardTitle = document.createElement('h2');
+  leaderboardTitle.textContent = 'Leaderboard';
+  leaderboard.appendChild(leaderboardTitle);
+
+  const leaderboardTable = document.createElement('table');
+
+  // Create table header
+  const headerRow = document.createElement('tr');
+  const initialsHeader = document.createElement('th');
+  initialsHeader.textContent = 'Initials';
+  const scoreHeader = document.createElement('th');
+  scoreHeader.textContent = 'Score';
+  headerRow.appendChild(initialsHeader);
+  headerRow.appendChild(scoreHeader);
+  leaderboardTable.appendChild(headerRow);
+
+  // Add leaderboard data to the table
+  leaderboardData.forEach((entry) => {
+    const row = document.createElement('tr');
+    const initialsCell = document.createElement('td');
+    initialsCell.textContent = entry.initials;
+    const scoreCell = document.createElement('td');
+    scoreCell.textContent = entry.score;
+    row.appendChild(initialsCell);
+    row.appendChild(scoreCell);
+    leaderboardTable.appendChild(row);
+  });
+
+  leaderboard.appendChild(leaderboardTable);
 }
+
 
 questionSequence(questionData);
