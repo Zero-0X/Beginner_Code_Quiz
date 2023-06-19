@@ -14,6 +14,7 @@ var penalty = 6;
 var time = 60;
 let currentQuestionIndex = 0;
 let score = 0
+let leaderboardData = [];
 
 startButton.addEventListener('click', startQuiz);
 
@@ -40,7 +41,7 @@ function startTimer() {
     if (time <= 0) {
       clearInterval(timer);
       console.log("Game Over!");
-      gameOver();
+      endQuiz();
     }
   }, 1000);
 }
@@ -93,12 +94,20 @@ function checkAnswer(selectedChoice, correctAnswer) {
 
   disableChoices();
   showNextButton();
+
+  if (currentQuestionIndex === questionData.length < 1) {
+
+    endQuiz();
+  }
 }
 
 // function to penalize for incorrect answers
 function penalize() {
-  time = time - penalty;
-  countdownElement.textContent = time;
+  // time = time - penalty;
+  // countdownElement.textContent = time;
+  time -= penalty;
+  countdownElement.textContent = time.toString();
+
 }
 
 // function to disable the answer choices
@@ -155,8 +164,6 @@ function endQuiz() {
 }
 
 // TODO: Implement logic to display the leaderboard with scores
-
-let.leaderboardData = [];
 
 function displayLeaderboard() {
   console.log('How did you do?')
