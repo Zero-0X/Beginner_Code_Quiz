@@ -6,6 +6,9 @@ This Beginner Code Quiz was designed with 1980s Arcade Styles in mind, testing t
 
 Link: 
 
+![Screenshot (451)](https://github.com/Zero-0X/Challenge_4_Beginner_Code_Quiz/assets/110013207/a1197cba-75f0-4ece-88c8-e3bc4337bde3)
+
+
 ## Installation
 
 N/A
