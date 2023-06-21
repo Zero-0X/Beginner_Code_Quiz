@@ -4,10 +4,12 @@
 
 This Beginner Code Quiz was designed with 1980s Arcade Styles in mind, testing the user's knoiwledge of basic coding. 
 
-Link: 
+Link: https://zero-0x.github.io/Challenge_4_Beginner_Code_Quiz/
 
-![Screenshot (451)](https://github.com/Zero-0X/Challenge_4_Beginner_Code_Quiz/assets/110013207/a1197cba-75f0-4ece-88c8-e3bc4337bde3)
-
+![Screenshot (452)](https://github.com/Zero-0X/Challenge_4_Beginner_Code_Quiz/assets/110013207/24dd8240-5fbe-43ca-b12a-ebc393aa98f9)
+![Screenshot (453)](https://github.com/Zero-0X/Challenge_4_Beginner_Code_Quiz/assets/110013207/5e7ace5b-c74f-4e2f-ab22-3a53938fea50)
+![Screenshot (454)](https://github.com/Zero-0X/Challenge_4_Beginner_Code_Quiz/assets/110013207/68a13948-9bfe-4bc2-8283-7bc28735feca)
+![Screenshot (456)](https://github.com/Zero-0X/Challenge_4_Beginner_Code_Quiz/assets/110013207/73878c9d-6471-49b2-847b-3abfe74a59a3)
 
 ## Installation
 
